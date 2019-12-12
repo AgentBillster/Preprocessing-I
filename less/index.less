@@ -134,213 +134,243 @@ table {
 
 @main-font: "Montserrat", sans-serif;
 
+//--------------------------------------------------------mixins and variables
+.hide() {
+  display: none;
+}
+
+.photoright() {
+  height: 49%; // all of this sets up the div box picture on right
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid gray;
+}
+
+.photoleft() {
+  height: 49%;
+  display: flex; // all of this sets up the div box picture on left
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  border-bottom: 1px solid gray;
+}
+
+.words() {
+  color: @color;
+  padding: 6%;
+  text-align: center;
+  width: 49%; // all of this styles the text on the sections
+  font-size: 2rem;
+}
+
+@size: 3rem;
+@color: white;
+//-------------------------------------------------end of mixins and variables
+
 * {
   box-sizing: border-box;
 }
 
 html,
 body {
+  margin: auto;
   height: 100%;
+  width: 80%;
   background-color: black;
   font-family: @main-font;
-}
 
-//-------nav styling starts here
-
-.topnav {
-  color: rgb(182, 182, 182);
-  height: 4%;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  text-transform: uppercase;
-}
-
-//hero image styling
-
-.hero {
-  background-image: linear-gradient(
-      rgba(172, 172, 172, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url("../images/_DSC0007.jpg");
-  height: 80%;
-  width: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid black;
-
-  .hero-inner {
-    width: 30%;
-    text-align: center;
-    margin-left: 67%;
-    margin-top: 16%;
-
-    h1 {
-      font-size: 5rem;
-    }
+  @media (max-width: 500px) {
+    width: 100%;
   }
-}
 
-//----------------------about me section
+  //-------nav styling starts here
 
-.about-me {
-  color: white;
-  height: 45%;
-  display: flex; // all of this sets up the div box picture on left
-  flex-direction: row-reverse;
-  justify-content: center;
-  border-bottom: 1px solid gray;
+  .topnav {
+    color: rgb(182, 182, 182);
+    height: 4%;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
 
-  .about-me-info {
-    margin-top: 3%;
-    text-align: center;
-    padding: 2%;
-    width: 50%; // all of this styles the text on the sections
-    font-size: 2rem;
-    h2 {
-      font-size: 3rem;
-      text-transform: uppercase;
+    @media (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15%;
     }
   }
 
-  .about-me-img {
-    width: 50%;
+  //hero image styling
 
-    .abim {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  }
-}
+  .hero {
+    background-image: url("../images/_DSC0007.jpg");
+    height: 90%;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid black;
 
-//----------------------Skills section
-
-.skills {
-  color: white;
-  height: 45%; // all of this sets up the div box picture on right
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid gray;
-
-  .skills-info {
-    margin-top: 3%;
-    text-align: center;
-    padding: 2%; // all of this styles the text on the sections
-    font-size: 2rem;
-    width: 50%;
-    font-size: 2rem;
-    h2 {
-      font-size: 3rem;
-      text-transform: uppercase;
+    @media (max-width: 500px) {
+      height: 40%;
+      margin-top: 15%;
     }
   }
 
-  .skills-img {
-    width: 50%;
+  //----------------------about me section
 
-    .sim {
-      margin-left: 34%;
-      max-width: 100%;
-      max-height: 100%;
+  .about-me {
+    .photoleft();
+
+    .about-me-info {
+      .words();
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: @size;
+        text-transform: uppercase;
+      }
     }
-  }
-}
 
-//--------------------------education section
+    .about-me-img {
+      width: 49%;
+      @media (max-width: 500px) {
+        .hide();
+      }
 
-.education {
-  color: white;
-  height: 45%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  border-bottom: 1px solid gray;
-
-  .education-info {
-    margin-top: 5%;
-    text-align: center;
-    padding: 2%;
-    width: 50%;
-    font-size: 2rem;
-    h2 {
-      font-size: 3rem;
-      text-transform: uppercase;
-    }
-  }
-
-  .education-img {
-    width: 50%;
-
-    .eim {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  }
-}
-
-//----------------------work section
-
-.work {
-  color: white;
-  height: 45%;
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid gray;
-
-  .work-info {
-    margin-top: 5%;
-    text-align: center;
-    padding: 2%;
-    width: 50%;
-    font-size: 2rem;
-    h2 {
-      font-size: 3rem;
-      text-transform: uppercase;
+      .abim {
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
   }
 
-  .work-img {
-    width: 50%;
+  //----------------------Skills section
 
-    .wim {
-      margin-left: 34%;
-      max-width: 100%;
-      max-height: 100%;
+  .skills {
+    .photoright();
+
+    .skills-info {
+      .words();
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+      h2 {
+        font-size: @size;
+        text-transform: uppercase;
+      }
+    }
+
+    .skills-img {
+      width: 49%;
+
+      @media (max-width: 500px) {
+        .hide();
+      }
+
+      .sim {
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
   }
-}
 
-//----------------------contact
+  //--------------------------education section
 
-.contact {
-  color: white;
-  height: 45%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  border-bottom: 1px solid gray;
+  .education {
+    .photoleft();
 
-  .contact-info {
-    margin-top: 5%;
-    text-align: center;
-    padding: 2%;
-    width: 50%;
-    font-size: 2rem;
-    h2 {
-      font-size: 3rem;
-      text-transform: uppercase;
+    .education-info {
+      .words();
+
+      @media (max-width: 500px) {
+        width: 100%;
+        margin-top: 20%;
+      }
+
+      h2 {
+        font-size: @size;
+        text-transform: uppercase;
+      }
+    }
+
+    .education-img {
+      width: 49%;
+
+      @media (max-width: 500px) {
+        .hide();
+      }
+
+      .eim {
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
   }
 
-  .contact-photo {
-    width: 50%;
+  //----------------------work section
 
-    .cim {
-      max-width: 100%;
-      max-height: 100%;
+  .work {
+    .photoright();
+    .work-info {
+      .words();
+
+      @media (max-width: 500px) {
+        width: 100%;
+        margin-top: %;
+      }
+      h2 {
+        font-size: @size;
+        text-transform: uppercase;
+      }
+    }
+
+    .work-img {
+      width: 49%;
+
+      @media (max-width: 500px) {
+        .hide();
+      }
+
+      .wim {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  //----------------------contact
+
+  .contact {
+    .photoright();
+    .contact-info {
+      .words();
+
+      @media (max-width: 500px) {
+        width: 100%;
+        margin-top: 20%;
+      }
+      h2 {
+        font-size: @size;
+        text-transform: uppercase;
+      }
+    }
+
+    .contact-photo {
+      width: 49%;
+
+      @media (max-width: 500px) {
+        .hide();
+      }
+
+      .cim {
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
   }
 }
