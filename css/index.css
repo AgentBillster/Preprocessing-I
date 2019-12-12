@@ -127,6 +127,13 @@ table {
   border-spacing: 0;
 }
 /* Set every element's box-sizing to border-box */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+}
 * {
   box-sizing: border-box;
 }
@@ -134,6 +141,7 @@ html,
 body {
   height: 100%;
   background-color: black;
+  font-family: "Montserrat", sans-serif;
 }
 .topnav {
   color: #b6b6b6;
@@ -142,9 +150,10 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  text-transform: uppercase;
 }
 .hero {
-  background-image: linear-gradient(rgba(172, 172, 172, 0.5), rgba(0, 0, 0, 0.5)), url("../images/david-b-ulaWL64gUKM-unsplash.jpg");
+  background-image: linear-gradient(rgba(172, 172, 172, 0.5), rgba(0, 0, 0, 0.5)), url("../images/_DSC0007.jpg");
   height: 80%;
   width: 100%;
   background-position: center center;
@@ -161,6 +170,133 @@ body {
 .hero .hero-inner h1 {
   font-size: 5rem;
 }
-.about-dog {
+.about-me {
   color: white;
+  height: 45%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+}
+.about-me .about-me-info {
+  margin-top: 3%;
+  text-align: center;
+  padding: 2%;
+  width: 50%;
+  font-size: 2rem;
+}
+.about-me .about-me-info h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.about-me .about-me-img {
+  width: 50%;
+}
+.about-me .about-me-img .abim {
+  max-width: 100%;
+  max-height: 100%;
+}
+.skills {
+  color: white;
+  height: 45%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+}
+.skills .skills-info {
+  margin-top: 3%;
+  text-align: center;
+  padding: 2%;
+  width: 50%;
+  font-size: 2rem;
+}
+.skills .skills-info h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.skills .skills-img {
+  width: 50%;
+}
+.skills .skills-img .sim {
+  margin-left: 34%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.education {
+  color: white;
+  height: 45%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+}
+.education .education-info {
+  margin-top: 5%;
+  text-align: center;
+  padding: 2%;
+  width: 50%;
+  font-size: 2rem;
+}
+.education .education-info h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.education .education-img {
+  width: 50%;
+}
+.education .education-img .eim {
+  max-width: 100%;
+  max-height: 100%;
+}
+.work {
+  color: white;
+  height: 45%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+}
+.work .work-info {
+  margin-top: 5%;
+  text-align: center;
+  padding: 2%;
+  width: 50%;
+  font-size: 2rem;
+}
+.work .work-info h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.work .work-img {
+  width: 50%;
+}
+.work .work-img .wim {
+  margin-left: 34%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.contact {
+  color: white;
+  height: 45%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+}
+.contact .contact-info {
+  margin-top: 5%;
+  text-align: center;
+  padding: 2%;
+  width: 50%;
+  font-size: 2rem;
+}
+.contact .contact-info h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.contact .contact-photo {
+  width: 50%;
+}
+.contact .contact-photo .cim {
+  max-width: 100%;
+  max-height: 100%;
 }
